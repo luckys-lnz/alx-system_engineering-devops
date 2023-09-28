@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# using until to display Best school X10
+
+count=0
+
+until [ $count -ge 10 ]; do
+    echo "Best School"
+    ((count++))
+done
