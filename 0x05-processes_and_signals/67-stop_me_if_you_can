@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# cript that stops 4-to_infinity_and_beyond process.
+#+ You cannot use kill or killall... well @task 5-dont_stop_me_now smiling RN
+
+# Trap SIGTERM signal and print a message
+# trap 'echo "I am invincible!!!"; exit' SIGTERM
+
+pkill -f 7-highlander
