@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# cript that stops 4-to_infinity_and_beyond process.
+#+ You cannot use kill or killall... well @task 5-dont_stop_me_now smiling RN
+
+pkill -f "4-to_infinity_and_beyond"
+
