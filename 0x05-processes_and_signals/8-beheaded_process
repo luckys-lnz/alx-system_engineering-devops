@@ -1,1 +1,4 @@
-pgrep -f 7-highlander | xargs kill -9
+#!/usr/bin/env bash
+# kill "7-highlander" process
+
+pkill -f -SIGKILL 7-highlander
