@@ -4,4 +4,4 @@
 #+ along with the process name, 
 #+ of processes whose name contain the word bash
 
-pgrep -l bash
+pgrep -af bash
