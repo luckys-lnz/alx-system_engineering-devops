@@ -1,7 +1,5 @@
-#!/usr/bin/env bash 
-#A script to change your home IP
-#Changes the localHost - 127.0.0.2 and Facebook.com - 8.8.8.8
-
+#!/usr/bin/env bash
+# Modifies the ip of this computer
 cp /etc/hosts ~/hosts.new
-sed -i 's/127.0.0.1\tlocalhost/127.0.0.2 localhost\n8.8.8.8 \tfacebook.com/' ~/hosts.new
-cp -f ~/hosts.new /etc/hosts
+sed -i "s/127.0.0.1\tlocalhost/127.0.0.2\tlocalhost\n8.8.8.8 \tfacebook.com/" ~/hosts.new
+cp ~/hosts.new /etc/hosts
