@@ -1,5 +1,5 @@
-# Project name :-0x09. Web infrastructure design
-**Questions and Answers**
+Project name :-0x09. Web infrastructure design
+Questions and Answers
 
 - What is a server :- A server is a computer that provides informatioin to other computers (clients) over a network
 
@@ -15,7 +15,7 @@
 
 - What is the server using to communicate with the computer of the user requesting the website :- The server uses the Hypertext Transfer Protocol (HTTP) or its secure variant, HTTPS, to communicate with the computer of the user requesting the website.
 
-**explain what the issues are with this infrastructure:**
+explain what the issues are with this infrastructure:-
 
 - SPOF :- The entire infrastructure relies on a single server, leading to potential downtime if the server fails.
 
