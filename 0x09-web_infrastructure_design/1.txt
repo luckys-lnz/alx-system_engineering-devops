@@ -1,0 +1,38 @@
+Explanation for the concept image
+
+client:- the concepts start with a user requesting a website.
+
+1. Load Balancer (HAProxy):- 
+- Purpose:- Distributes incoming traffic across multiple servers to ensure no single server is overworked.
+
+- Distribution Algorithm:- Round Robin, which distributes requests evenly across all servers in a sequential manner.
+
+- Active-Active Setup:- Both the web server and the application server are actively handling requests. In an Active-Passive setup, only one server is active while the other is on standby, ready to take over if the other server fails.
+
+2. web server (Nginx):-
+- Purpose:- Handles static content and forwards dynamic requests to the application server.
+
+- Reason:- Nginx is efficient at serving static files and handling numerous connections, making it an ideal choice for a web server.
+
+3. Application server:-
+- Purpose:- Executes the business logic of the application, processes dynamic requests, and interacts with the database.
+- Reason:- Separating the application logic from the web server improves scalability and maintainability.
+
+4. Database (MYSQL):- 
+- Purpose:- Stores persistent data for the application.
+- Primary-Replica Cluster:-
+    - primary node:- handles write and updates operation 
+    - replica node:- Copies data from the primary node and can be used to distribute read operations,   improving read performance and providing redundancy.
+
+Issues with the infracstructue
+
+- Single Points of Failure (SPOF):-
+    - Load Balancer:- If HAProxy fails, the entire system becomes unavailable.
+    - Database Primary Node:- If the primary database fails without proper failover mechanisms, the application cannot process writes.
+
+- Security Issues:-
+    - No firewall to block unauthorized access.
+    - No HTTPS, making data transmission vulnerable to interception.
+
+- No Monitoring:
+    - Without monitoring tools, it’s difficult to detect and respond to performance issues or failures promptly.
