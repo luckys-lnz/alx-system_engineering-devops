@@ -1,0 +1,38 @@
+Explanation of Components
+Firewalls
+Firewall 1: Placed between the internet and the load balancer to filter incoming traffic, ensuring only legitimate requests reach the load balancer.
+Firewall 2: Protects Web Server 1 from potential threats originating from the load balancer or internal network.
+Firewall 3: Protects Web Server 2 similarly.
+Firewall 4: Protects Web Server 3 similarly.
+Purpose of Firewalls:
+
+Firewalls are security devices designed to prevent unauthorized access to or from a private network. They filter incoming and outgoing traffic based on an applied rule set to block malicious traffic and allow legitimate traffic.
+Load Balancer (with SSL Termination)
+SSL Certificate: Installed at the load balancer to handle HTTPS traffic, providing encryption and secure communication between clients and the server.
+Purpose of HTTPS: Serving traffic over HTTPS ensures that data exchanged between the client and server is encrypted, protecting it from eavesdropping, man-in-the-middle attacks, and data tampering.
+Web Servers
+Web Server 1, 2, 3: These servers host the application, serving web pages to users. They are placed behind individual firewalls for additional security.
+Monitoring Clients
+Monitoring Clients: Installed on each web server and the database server to collect metrics, logs, and other relevant data.
+Purpose of Monitoring:
+Monitoring helps in maintaining the health and performance of the infrastructure.
+It detects issues proactively and provides insights into server performance and application behavior.
+It helps in capacity planning and identifying security threats.
+MySQL Database Server
+Database Server: Holds the data for www.foobar.com. It should ideally be a part of a replicated setup to ensure high availability and failover capabilities.
+Monitoring Details
+Data Collection: Monitoring tools like Sumologic collect data through installed agents or clients on each server. These agents gather logs, metrics (like CPU usage, memory usage), and application-specific data and send it to a central monitoring service for analysis and visualization.
+Monitoring QPS (Queries Per Second): To monitor QPS, configure the monitoring client to track and report database queries per second. This can usually be done by enabling specific database metrics within the monitoring tool.
+Potential Issues with This Infrastructure
+SSL Termination at the Load Balancer Level:
+
+Issue: Terminating SSL at the load balancer means that traffic between the load balancer and web servers is not encrypted. This can be a security risk if the internal network is compromised.
+Solution: Use SSL passthrough or re-encrypt traffic between the load balancer and web servers.
+Single MySQL Server for Writes:
+
+Issue: Having only one MySQL server capable of accepting writes can become a bottleneck and a single point of failure.
+Solution: Implement MySQL replication with failover mechanisms, or use a clustered database solution like MySQL Cluster or Galera Cluster.
+Servers with All Same Components:
+
+Issue: Having servers with the same components (database, web server, and application server) can lead to resource contention and makes scaling difficult.
+Solution: Separate concerns by dedicating specific servers to specific roles (e.g., separate database servers, application servers, and web servers) to optimize resource usage and scalability.
