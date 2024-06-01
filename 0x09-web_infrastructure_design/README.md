@@ -36,3 +36,5 @@
 - I must be able to explain what each component is doing
 - I must be able to explain system redundancy
 - I must Know all the mentioned acronyms: LAMP, SPOF, QPS
+
+- [Cyber security terms and definitions](https://www.f5.com/glossary)
