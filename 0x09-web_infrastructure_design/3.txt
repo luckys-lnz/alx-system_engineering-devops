@@ -1,0 +1,58 @@
+Explanation of Components
+Additional Elements
+Load Balancer 2 (HAProxy) Cluster:
+
+Purpose: Adding a second load balancer configured in a cluster with the first one ensures high availability. If one load balancer fails, the other can take over, providing continuous service.
+HAProxy Configuration: The two HAProxy load balancers are set up in an active-passive or active-active configuration, ensuring load distribution and failover capabilities.
+Web Server:
+
+Purpose: The web server handles HTTP/HTTPS requests from users, serving static content and forwarding requests to the application server as needed.
+Dedicated Server: Splitting the web server onto its own machine isolates its resources, improving performance and security.
+Application Server:
+
+Purpose: The application server runs the application logic, processing user requests and interacting with the database server as needed.
+Dedicated Server: Having a dedicated server for the application layer enhances performance, scalability, and security.
+Database Server:
+
+Purpose: The database server manages and stores the website's data. It processes read and write operations required by the application.
+Dedicated Server: A separate database server ensures better performance, scalability, and security for data operations.
+Additional Server:
+
+Purpose: This additional server could be used to enhance redundancy, serve as a backup, or be part of a cluster (like for the database server).
+Usage: In this design, it can be used for database replication or as an additional application server to handle more load.
+Firewalls
+Firewall 1: Placed between the internet and the load balancers to filter incoming traffic.
+Firewall 2: Between the load balancers and the internal network, providing an additional layer of security.
+Firewall 3: Protects the Web Server.
+Firewall 4: Protects the Application Server.
+Firewall 5: Protects the Database Server.
+Purpose of Firewalls:
+
+Firewalls provide a crucial layer of security by controlling traffic based on security rules, blocking malicious traffic, and allowing legitimate traffic.
+Security and Monitoring Components
+SSL Certificate
+SSL Certificate: Installed at both load balancers to handle HTTPS traffic, ensuring encrypted communication between clients and the load balancers.
+Purpose of HTTPS:
+
+HTTPS encrypts data between the client and the server, protecting it from interception and tampering.
+Monitoring Clients
+Monitoring Clients: Installed on each server (Web Server, Application Server, Database Server) to collect performance data, logs, and alerts.
+Purpose of Monitoring:
+Monitoring helps in detecting issues, ensuring optimal performance, and aiding in capacity planning.
+Tools like Sumologic gather logs, metrics, and other data, providing insights into server health and application performance.
+Monitoring Specifics
+Data Collection: The monitoring clients collect data like CPU usage, memory usage, disk I/O, and network traffic. They also gather application-specific metrics and database performance metrics.
+Monitoring QPS: To monitor Queries Per Second (QPS) on the database, the monitoring client should be configured to collect and report this metric, often available through database performance monitoring tools.
+Potential Issues and Solutions
+SSL Termination at the Load Balancer Level:
+
+Issue: Traffic between the load balancers and internal servers is not encrypted.
+Solution: Use SSL passthrough or re-encrypt traffic between the load balancers and internal servers to maintain encryption end-to-end.
+Single MySQL Server for Writes:
+
+Issue: A single MySQL server can become a bottleneck and single point of failure.
+Solution: Implement database replication or clustering (e.g., MySQL Cluster, Galera Cluster) to distribute the load and provide redundancy.
+Servers with All Same Components:
+
+Issue: Combining web, application, and database components on the same server can lead to resource contention.
+Solution: Separate servers for each component improve performance, security, and scalability.
