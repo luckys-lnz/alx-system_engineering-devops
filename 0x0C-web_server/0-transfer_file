@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# Bash script that transfers a file from our client to a server
+
+# Check if less than 4 parameters are passed
+if [ "$#" -lt 4 ]; then
+    # Show how input should be entered.
+    echo "Usage: $0 PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY"
+    exit 1
+# If exactly 3 parameters are passed, transfer the file to the server without using a private key.
+elif [ "$#" -eq 3 ]; then
+    scp "$1" "$3@$2:~/"
+# If exactly 4 parameters are passed, use the -i flag to specify the path to the private key file.
+else
+    scp -i "$4" -o StrictHostKeyChecking=no "$1" "$3@$2:~/"
+fi
+
