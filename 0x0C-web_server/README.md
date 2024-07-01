@@ -1,6 +1,7 @@
 # 0x0C. Web server
 
 [RFC 7231 (HTTP/1.1)](https://datatracker.ietf.org/doc/html/rfc7231)
+
 [RFC 7540 (HTTP/2)](https://datatracker.ietf.org/doc/html/rfc7540)
 
 man or help:
