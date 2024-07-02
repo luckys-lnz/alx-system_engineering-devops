@@ -1,33 +1,20 @@
-# Install Nginx
+# Install Nginx web server (w/ Puppet)
 package { 'nginx':
   ensure => installed,
 }
 
-# Configure Nginx
-file { '/etc/nginx/sites-available/default':
-  ensure  => file,
-  content => template('nginx/default.conf.erb'),
-  notify  => Service['nginx'],
+file_line { 'aaaaa':
+  ensure => 'present',
+  path   => '/etc/nginx/sites-available/default',
+  after  => 'listen 80 default_server;',
+  line   => 'rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;',
 }
 
-# Create the index.html file
 file { '/var/www/html/index.html':
-  ensure  => file,
   content => 'Hello World!',
 }
 
-# Redirect /redirect_me to YouTube
-file { '/etc/nginx/conf.d/redirect.conf':
-  ensure  => file,
-  content => 'location /redirect_me {
-    return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
-  }',
-  notify  => Service['nginx'],
-}
-
-# Ensure Nginx is running
 service { 'nginx':
-  ensure => running,
-  enable => true,
+  ensure  => running,
+  require => Package['nginx'],
 }
-
