@@ -1,17 +1,9 @@
 #!/usr/bin/env bash
 
 # Automating the installation fo nginx
-# gets the recent packages
+
 apt-get -y update
-
-# install nginx
 apt-get -y install nginx
-
-# Allow the firewall to accept incomming request
 ufw allow 'Nginx HTTP'
-
-# wirte "hello world " to index.html file
-echo "Hello World" > /var/www/html/index.html
-
+echo 'Hello World!' > /var/www/html/index.html
 service nginx start
-
