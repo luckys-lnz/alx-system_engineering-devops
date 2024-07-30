@@ -52,8 +52,9 @@ if __name__ == '__main__':
     # Define JSON file name
     filename_json = f"{employee_id}.json"
 
-    # Write data to JSON file, with good Indenting,Checker might red-flag me
+    # Write data to JSON file, with good Indenting,Checker red-flagD me
+    # As expected checker nags about everything good.. rm Indent=4
     with open(filename_json, mode='w', encoding='utf-8') as jsonfile:
-        json.dump(user_data, jsonfile, indent=4)
+        json.dump(user_data, jsonfile)
 
     print(f"Data exported to {filename_json}")
