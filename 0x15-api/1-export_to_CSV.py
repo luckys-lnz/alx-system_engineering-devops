@@ -44,10 +44,11 @@ if __name__ == '__main__':
     with open(filename_csv, mode='w', newline='', encoding='utf-8') as csvfile:
         write = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
         for task in todos:
+            completed_status = "True" if task.get('completed') else "False"
             write.writerow([
                 employee_id,
                 user.get('username'),
-                task.get('comppleted'),
+                completed_status,
                 task.get('title')
                 ])
     print(f"Data exportted to {filename_csv}")
