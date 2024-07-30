@@ -38,7 +38,8 @@ if __name__ == '__main__':
 
     # Extract completed tasks
     completed_tasks = [
-        task.get('title') for task in todos if task.get('completed') is True
+        task.get('title') for task in todos if task.get(
+                 'completed') is True
     ]
 
     total_tasks = len(todos)
@@ -51,4 +52,3 @@ if __name__ == '__main__':
     )
     for task_title in completed_tasks:
         print(f"\t {task_title}")
-
