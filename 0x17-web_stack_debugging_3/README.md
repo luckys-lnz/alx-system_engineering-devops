@@ -1,12 +1,11 @@
-# 0x17. Web stack debugging #3 # Background Context ![image](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-sysadmin_devops/293/d42WuBh.png)
-
-# Background read
+# 0x17. Web stack debugging
+![image](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-sysadmin_devops/293/d42WuBh.png)
 
 ## Web stack debugging
 **Intro**
 Debugging usually takes a big chunk of a software engineer’s time. The art of debugging is tough and it takes years, even decades to master, and that is why seasoned software engineers are the best at it… experience. They have seen lots of broken code, buggy systems, weird edge cases and race conditions.
 
-![image](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2020/9/45dffb0b1da8dc2ce47e340d7f88b05652c0f486.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20240814%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240814T091151Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=04e4db0fb721112592d8dce0fefc3ff93cf836b50d4b5d08e7f17249535347bf)
+![image](img/45dffb0b1da8dc2ce47e340d7f88b05652c0f486.png)
 
 **Non-exhaustive guide to debugging**
 - School specific
@@ -83,4 +82,4 @@ Debugging is fun
 Debugging can be frustrating, but it will definitely be part of your job, it requires experience and methodology to become good at it. The good news is that bugs are never going away, and the more experienced you become, trickier bugs will be assigned to you! Good luck :)
 
 
-![image](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2020/9/bae58c9f066a9668001ef4b4c39778407439d2f9.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20240814%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240814T091151Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=65893ec53f6dbab5de29f90af62041f4ac734a048c5c822fdf6108276b78a41c)
+![image](img/bae58c9f066a9668001ef4b4c39778407439d2f9.gif)
