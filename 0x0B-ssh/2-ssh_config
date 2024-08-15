@@ -3,7 +3,7 @@
 # password
 
 Host 343458-web-01
-    HostName 54.146.80.96
+    HostName 34.203.75.104
     User ubuntu
     IdentityFile ~/.ssh/school
     PasswordAuthentication no
