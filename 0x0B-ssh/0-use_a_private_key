@@ -3,4 +3,4 @@
 # server using the private key
 
 # ssh comamd
-ssh -i ~/.ssh/school ubuntu@54.146.80.96
+ssh -i ~/.ssh/school ubuntu@34.203.75.104
