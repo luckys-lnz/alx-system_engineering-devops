@@ -1,4 +1,6 @@
-#apt-get update
+#!usr/bin/env bash
+# Script to updates and install Nginx on your server
+apt-get update
 apt-get -y install nginx
 ufw allow 'Nginx HTTP'
 echo "Hello World!" > /var/www/html/index.html
