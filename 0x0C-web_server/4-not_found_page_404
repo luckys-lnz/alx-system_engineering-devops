@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 #echo -e "Updating and installing Nginx.\n"
 sudo apt-get update -y -qq && \
-	 sudo apt-get install nginx -y
+sudo apt-get install nginx -y
 
-echo -e "\nSetting up some minor stuff.\n"
+echo -e "\nsit back and relax... Setting up some stuffs\n"
 
 # starting nginx service
 sudo service nginx start
