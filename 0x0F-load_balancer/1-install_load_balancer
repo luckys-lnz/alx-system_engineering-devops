@@ -34,14 +34,14 @@ defaults
   timeout server 15s
   timeout http-request 10s
 
-frontend clickviral-tech-frontend
+frontend luckyarchi.tech
     bind *:80
-    default_backend clickviral-tech-backend
+    default_backend luckyarchi.tech
 
 backend clickviral-tech-backend
     balance roundrobin
-    server 151666-web-01 100.25.190.21:80 check
-    server 151666-web-02 54.160.77.90:80 check
+    server 151666-web-01 34.203.75.104 check
+    server 151666-web-02 52.91.125.99 check
 "
 
 # shellcheck disable=SC2154
@@ -58,6 +58,3 @@ else
 	sudo service haproxy restart
 fi
 
-echo -e "web-01 web-02"
-echo "web-01"
-echo "web-02"
